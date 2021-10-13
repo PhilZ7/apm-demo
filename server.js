@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 
 let students = []
 
-app.post('api/student', (req, res) => {
+app.post('/api/student', (req, res) => {
     let { name } = req.body
 
     students.push(name)
