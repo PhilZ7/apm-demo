@@ -14,6 +14,19 @@ app.get('/', (req, res) => {
     rollbar.info('html file served successfully')
 })
 
+let students = []
+
+app.post('api/student', (req, res) => {
+    let { name } = req.body
+
+    students.push(name)
+
+    rollbar.log('student added successfully', {author:'Phil', type:'manual entry'})
+
+    res.status(200).send(students)
+
+})
+
 const port = process.env.PORT || 4400
 
 app.listen(port, () => console.log(`server up on ${port}.`))
