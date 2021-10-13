@@ -7,6 +7,8 @@ const rollbar = new Rollbar({
     captureUnhandledRejections: true
 })
 
+app.use('/style', express.static('./public/styles.css'))
+
 const app = express()
 
 app.use(express.json())
